@@ -1,10 +1,10 @@
 import com.projeto.atribuicaoreferencia.MeuObj;
 import com.projeto.no.No;
+import com.projeto.pilha.Pilha;
 
 public class App {
     public static void main(String[] args){
-        testeNo();
-        testeAtribuicaoEReferencia();
+        testePilha();
     }
 
     private static void testeAtribuicaoEReferencia(){
@@ -42,4 +42,26 @@ public class App {
         System.out.println(noI1.getNext().getNext());
     }
 
+    private static void testePilha(){
+        Pilha<Integer> minha_pilha = new Pilha<Integer>();
+        minha_pilha.push(1);
+        minha_pilha.push(2);
+        System.out.println("Topo da pilha: " + minha_pilha.top());
+        System.out.println("Popping topo da pilha: " + minha_pilha.pop());
+        System.out.println("Minha pilha está vazia? " + minha_pilha.isEmpty());
+        System.out.println("Novo topo da pilha: " + minha_pilha.top());
+        System.out.println("Popping topo da pilha: " + minha_pilha.pop());
+        System.out.println("Minha pilha está vazia? " + minha_pilha.isEmpty());
+        System.out.println("Enchendo pilha...");
+        for(int i = 0; i<=10; i++){
+            System.out.println("Adicionando " + i + " à pilha");
+            minha_pilha.push(i);
+        }
+        System.out.println("Topo da pilha: " + minha_pilha.top());
+        System.out.println("Esvaziando pilha...");
+        while (!minha_pilha.isEmpty()){
+            System.out.println("Popping topo da pilha: " + minha_pilha.pop());
+        }
+        System.out.println("Minha pilha está vazia? " + minha_pilha.isEmpty());
+    }
 }
